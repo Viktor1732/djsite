@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from woman.views import index
+from woman.views import index, categories
 
 """ woman/ будет добавляться к домену нашего сайта: http://127.0.0.1:8000/woman/. 
 По этому маршруту бедет активизироваться функция index"""
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('woman/', index),
+    path('', index), # Переделали функцию-представление index на главную страницу
+    path('cats/', categories),
 ]
